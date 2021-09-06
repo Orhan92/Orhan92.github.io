@@ -19,13 +19,12 @@
 # in the templates via {{ site.myvariable }}.
 
 title: A Blog by Orhan Albayati
-email: your-email@example.com
+email: orhanalbayati1@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my blog. For now, I will post anything that is related to the course: Utveckling av Molnbaserade Applikationer. I am currently a .NET Developer student with one more year to go before I call myself a Junior Programmer.. Or can I? I would rather say a Noobie programmer he he! Well anyways, I hope you enjoy my content and if there is anything on your mind that can help me improve this page, then please let me know! Have a good and awesome time here on my page.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username: jekyll
+github_username: Orhan92
 
 # Build settings
 theme: jekyll-theme-clean-blog
