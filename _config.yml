@@ -18,12 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: A Blog by Orhan Albayati
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Welcome to my blog. For now, I will post anything that is related to the course: Utveckling av Molnbaserade Applikationer. I am currently a .NET Developer student with one more year to go before I call myself a Junior Programmer.. Or can I? I would rather say a Noobie programmer he he! Well anyways, I hope you enjoy my content and if there is anything on your mind that can help me improve this page, then please let me know! Have a good and awesome time here on my page.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
