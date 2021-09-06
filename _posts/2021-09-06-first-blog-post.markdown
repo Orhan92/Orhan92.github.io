@@ -13,6 +13,34 @@ Today we have been learning about different cloud solutions such as IaaS (Infras
 
 The most interesting part in todays lecture was going through and touching the tip of the fundamentals and basics of cloud solutions. In the section below I will try to do my best to explain my perception of what 'The Cloud' is.
 
-![Picture](/images/image1.jpg){:class="img-responsive"}
+### Amazon Pricing Calculation (Cloud service)
 
-## Hejsan
+![Aws1](/orhan92/images/AWS1.png)
+![Aws2](/orhan92/images/AWS2.png)
+![Aws3](/orhan92/images/AWS3.png)
+
+### Google Pricing Calculation (Cloud Service)
+
+![Google](/orhan92/images/Google.png)
+
+### IBM Pricing Calculation (Cloud Service)
+
+![IBM](/orhan92/images/IBM.png)
+
+### Azure Pricing Calculation (Cloud Service)
+
+![Azure](/orhan92/images/Azure.png)
+
+### Smaller providers | Pricing Calculation (Cloud Service)
+
+#### Hetzner
+
+![Hetzner](/orhan92/images/Hetzner.png)
+
+#### Ecompute
+
+![Ecompute](/orhan92/images/Ecompute.png)
+
+#### Digital Ocean
+
+![DigitalOcean](/orhan92/images/DigitalOcean.png)
