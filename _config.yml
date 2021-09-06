@@ -21,8 +21,8 @@
 title: A Blog by Orhan Albayati
 email: orhanalbayati1@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-baseurl: "orhan92" # the subpath of your site, e.g. /blog
-url: "orhan92.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/orhan92" # the subpath of your site, e.g. /blog
+url: "https://orhan92.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username: Orhan92
 
