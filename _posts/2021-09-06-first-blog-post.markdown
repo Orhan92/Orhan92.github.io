@@ -61,11 +61,11 @@ _I have to point it out once again. I am still in the very beginning of my learn
 
 ## Well-known Providers | Pricing Calculation (Cloud Service)
 
-# Different Cloud Services (Pricing Calculation)
-
 In the section below, I have made price calculations to find out pricing ranges within the Giant Cloud providers compared to smaller ones. For this example we have made up a scenario where we need a server that should run a simple website with a simple database, alternatively everything installed on the same server. Requirements: 2 vCPU, 8GB RAM, 10GB Storage on a LINUX Server in Europe. The server should be up and running 24/7.
 
 Down below I will start with listing the Giants followed by the smaller providers.
+
+---
 
 ### Amazon Pricing Calculation (Cloud service)
 
@@ -96,6 +96,8 @@ Down below I will start with listing the Giants followed by the smaller provider
 ---
 
 ## Smaller providers | Pricing Calculation (Cloud Service)
+
+---
 
 ### Hetzner
 
