@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Welcome to Jekyll!"
+subtitle: "Hints and tips on how to use Jekyll!"
 date: 2021-09-06 18:23:45 +0200
 categories: jekyll update
+background: "/images/image1.jpg"
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and
