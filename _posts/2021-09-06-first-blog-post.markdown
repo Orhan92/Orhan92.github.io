@@ -69,29 +69,29 @@ Down below I will start with listing the Giants followed by the smaller provider
 
 ### Amazon Pricing Calculation (Cloud service)
 
-![Aws1](/orhan92/images/AWS1.png){:width="800px"}
+![Aws1](/images/AWS1.png){:width="800px"}
 
-![Aws2](/orhan92/images/AWS2.png){:width="800px"}
+![Aws2](/images/AWS2.png){:width="800px"}
 
-![Aws3](/orhan92/images/AWS3.png){:width="800px"}
+![Aws3](/images/AWS3.png){:width="800px"}
 
 ---
 
 ### Google Pricing Calculation (Cloud Service)
 
-![Google](/orhan92/images/Google.png){:width="800px"}
+![Google](/images/Google.png){:width="800px"}
 
 ---
 
 ### IBM Pricing Calculation (Cloud Service)
 
-![IBM](/orhan92/images/IBM.png){:width="800px"}
+![IBM](/images/IBM.png){:width="800px"}
 
 ---
 
 ### Azure Pricing Calculation (Cloud Service)
 
-![Azure](/orhan92/images/Azure.png){:width="800px"}
+![Azure](/images/Azure.png){:width="800px"}
 
 ---
 
@@ -101,19 +101,19 @@ Down below I will start with listing the Giants followed by the smaller provider
 
 ### Hetzner
 
-![Hetzner](/orhan92/images/Hetzner.png){:width="800px"}
+![Hetzner](/images/Hetzner.png){:width="800px"}
 
 ---
 
 ### Ecompute
 
-![Ecompute](/orhan92/images/Ecompute.png){:width="800px"}
+![Ecompute](/images/Ecompute.png){:width="800px"}
 
 ---
 
 ### Digital Ocean
 
-![DigitalOcean](/orhan92/images/DigitalOcean.png){:width="800px"}
+![DigitalOcean](/images/DigitalOcean.png){:width="800px"}
 
 ---
 
