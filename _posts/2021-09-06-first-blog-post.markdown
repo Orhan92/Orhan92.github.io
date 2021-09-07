@@ -121,4 +121,10 @@ Down below I will start with listing the Giants followed by the smaller provider
 
 As we can see, the bigger (giants) providers are far more expensive than the smaller providers. This could have many reasons which I havn't explored yet (which I will surely do!). But one thinkable reason could be the amount of resources or tools that the bigger providers can provide. It could also be a matter of security, processing, accessability, flexibility, speed etc. If I were to run a big organisation then I would probably not have any troubles affording Azure services, Google, IBM or AWS. But as a startup or relatively new company then those costs would probably have a great impact on the economy of the company. My personal approach would be to start with a smaller provider (as you probably can afford it) and then as the company scales you could always consider upgrading or changing provider.
 
--_Orhan Albayati_
+### References
+
+[What is The Cloud?](https://www.youtube.com/watch?v=BO6jvQ88ICQ)
+
+[Comparing Cloud Services](https://www.cloudhealthtech.com/blog/cloud-comparison-guide-glossary-aws-azure-gcp)
+
+[Cloud Terminology](https://medium.com/@vanshvarshney_/what-is-iaas-vs-saas-vs-paas-and-xaas-whats-the-difference-examples-ceadeee146e6)
