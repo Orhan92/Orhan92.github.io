@@ -27,7 +27,8 @@ twitter_username: jekyllrb
 github_username: Orhan92
 
 # Build settings
-theme: jekyll-theme-clean-blog
+# theme: jekyll-theme-clean-blog
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll@2b27cc8aa52234f701af0847d7969fdc019ae4fd
 plugins:
   - jekyll-feed
 # Exclude from processing.
