@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First Blog Post"
+title: "The Cloud"
 subtitle: "Lecture 1 - Blog post (Deadline 2021/09/07 23:55)"
 date: 2021-09-06 19:10:45 +0200
 categories: jekyll update
