@@ -101,7 +101,7 @@ If, everything is fine and we passed the test(s), we can then safely accept the 
 
 To illustrate the sequential steps that are made by the workflow see the image below:
 
-![Job finished](/images/Job.png)
+![Job finished](/images/Job.png){:width="650px"}
 
 In the image you can clearly see that the workflow have sequentially executed all the steps or instructions that we gave inside the [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml). And if everything passes, great, you are ready to merge it into the main branch and voila, you have now created your first CI Pipeline (even if it is a basic one that only builds and runs the tests).
 
