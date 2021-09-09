@@ -84,7 +84,7 @@ This is where all the steps are grouped together to run where each item is neste
 
 After the instructions above it is actually time for your workflow to go through what you want it to go through. In this case we will need to install every dependency that the project contains, we will see if the project can build without any failures and lastly we will run the tests within the repository which can be found here: [SpaceTest](https://github.com/Orhan92/spacepark-spaceinvaders/tree/CI-test-%26-build/Source/SpaceTest).
 
-!(illustration 2)[/images/name1.png]
+![illustration 2](/images/name1.png)
 
 As I said before these actions are all executed sequentially which means if the workflow can't build the project, it won't even bother going through the tests and a 'Failure' response will be sent out to the developer(s) who committed the change.
 
