@@ -35,7 +35,7 @@ https://explainagile.com/agile/xp-extreme-programming/practices/continuous-integ
 Okay, first of all I have forked an older project called Spacepark v1 (spacepark-spaceinvaders). The original repository can be found here: [Spacepark v1](https://github.com/PGBSNH20/spacepark-spaceinvaders).
 By forking a repository means that I copy that repository and create an exact copy of it in my own repository (see the link): [Forked Spacepark v1](https://github.com/Orhan92/spacepark-spaceinvaders).
 
-Next step in the process was to create a YAML file inside my new forked repository. But before I show you what that looks like, make sure that whenever you create that YAML file, create it in a new branch and NOT inside of main as we will test the CI Pipeline when we push from this newly created branch into the main branch. It should look something like this:
+Next step in the process was to create a YAML file inside my new forked repository. But before I show you what that looks like, make sure that whenever you create that YAML file, create it in a new branch and NOT inside of main as we will test the CI Pipeline when we merge it from this newly created branch into the main branch. It should look something like this:
 ![Filepath for YAML File](/images/yamlworkdir.png){:width="650px"}
 
 As you can see in the image above, I started by creating a '.github' folder in root of the newly created branch (CI-test-&-build) followed by another folder called 'workflows', and inside the 'workflows' folder i created my YAML file called 'CI-test-&-build' because that is exactly what my pipeline will do!
