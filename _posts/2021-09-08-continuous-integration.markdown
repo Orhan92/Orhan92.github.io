@@ -78,23 +78,25 @@ A job is basically what we are telling our workflow to do. For instance, in the 
 
 This is where all the steps are grouped together to run where each item is nested and executed sequentially. So in the first step we are using this line of code: `- uses: actions/checkout@v2` where we basically tell the job to retrieve version 2 of the community action. This one is checking out your action from your repository and downloads it into the runner where you can for example test against the code inside your repository. Next step is to setup the IDE inside the job which in this case is .NET Core SDK and .NET version 5.0.x:
 
-```
+`
+
 - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
-uses: actions/setup-dotnet@v1.7.2
-with:
-dotnet-version: ${{ matrix.dotnet-version }}
-```
+  uses: actions/setup-dotnet@v1.7.2
+  with:
+  dotnet-version: ${{ matrix.dotnet-version }}
+  `
 
 After the instructions above it is actually time for your workflow to go through what you want it to go through. In this case we will need to install every dependency that the project contains, we will see if the project can build without any failures and lastly we will run the tests within the repository which can be found here: [SpaceTest](https://github.com/Orhan92/spacepark-spaceinvaders/tree/CI-test-%26-build/Source/SpaceTest).
 
-```
+`
+
 - name: Install dependencies
-run: dotnet restore
+  run: dotnet restore
 - name: Build
-run: dotnet build --configuration Release --no-restore
+  run: dotnet build --configuration Release --no-restore
 - name: Test
-run: dotnet test --no-restore --verbosity normal
-```
+  run: dotnet test --no-restore --verbosity normal
+  `
 
 As I said before these actions are all executed sequentially which means if the workflow can't build the project, it won't even bother going through the tests and a 'Failure' response will be sent out to the developer(s) who committed the change.
 
@@ -110,10 +112,7 @@ In the image you can clearly see that the workflow have sequentially executed al
 
 I have excluded parts of the source code tests where those tests are running/checking against a local database, which in this case wont work. For it to work, I would probably have to remake the database structure into SQLite or Dockerize the database so that we can access it through the YAML file. But in this case, our database only exists locally, therefore I had to Exclude some tests which can be seen here: [Tests](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/Source/SpaceTest/UnitTest1.cs). Look for these lines of code:
 
-```
-[Fact(Skip = "Because of local database can't be read in GitHub CI, remove this Skip once another database have been setup like (SQL or through Docker)")]
-public void When_Inserting_ParkingData_In_Database_Expect_AnakinSkywalker_ParkingPrice_1h()
-```
+`[Fact(Skip = "Because of local database can't be read in GitHub CI, remove this Skip once another database have been setup like (SQL or through Docker)")] public void When_Inserting_ParkingData_In_Database_Expect_AnakinSkywalker_ParkingPrice_1h()`
 
 #### References
 
