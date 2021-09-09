@@ -72,11 +72,11 @@ The name as you can see in the picture above is only the name for this particula
 
 These are instructions that listens for available jobs. It runs one job at the time, keeps logs and reports the results. In my case we have runners on different occassions. First on row 3 where we are telling our workflow to work inside the [Source Directory](https://github.com/Orhan92/spacepark-spaceinvaders/tree/CI-test-%26-build/Source) which is also where we have both projects. This way our YAML file knows what to work with as the root folder doesn't contain any project files.
 
-#### jobs
+#### Jobs
 
 A job is basically what we are telling our workflow to do. For instance, in the YAML file in this case, we can see that the first job is to configure the job to build and run on ubuntu-latest `runs-on: ubuntu-latest`. In this case the job will execute on a virtual machine hosted by GitHub. Followed by the strategy and matrix where we tell the job to look if we can build our code on `dotnet-version: ['5.0.x']`. REMEMBER that all these jobs or steps are made sequentially and if one fails then the job will fail or get canceled (then you have to look inside the logs to see what's wrong).
 
-#### steps
+#### Steps
 
 This is where all the steps are grouped together to run where each item is nested and executed sequentially. So in the first step we are using this line of code: `- uses: actions/checkout@v2` where we basically tell the job to retrieve version 2 of the community action. This one is checking out your action from your repository and downloads it into the runner where you can for example test against the code inside your repository. Next step is to setup the IDE inside the job which in this case is .NET Core SDK and .NET version 5.0.x:
 
