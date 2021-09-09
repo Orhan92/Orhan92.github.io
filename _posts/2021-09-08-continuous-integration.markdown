@@ -36,5 +36,4 @@ Okay, first of all I have forked an older project called Spacepark v1 (spacepark
 By forking a repository means that I copy that repository and create an exact copy of it in my own repository (see the link): [Forked Spacepark v1](https://github.com/Orhan92/spacepark-spaceinvaders).
 
 Next step in the process was to create a YAML file inside my new forked repository. But before I show you what that looks like, make sure that whenever you create that YAML file, create it in a new branch and NOT inside of main as we will test the CI Pipeline when we push from this newly created branch into the main branch. It should look something like this:
-
 ![Filepath for YAML File](/images/yamlworkdir.png){:width="650px"}
