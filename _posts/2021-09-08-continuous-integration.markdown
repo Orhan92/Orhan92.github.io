@@ -26,9 +26,11 @@ The importance of using CI Pipelines is maybe to some very clear and to others n
 - You can test if the application build on other virtual machines, you can specify version of platform or even operating systems to see if the code passes or not.
 - Makes it easier to work Agile.
 
-<!-- https://semaphoreci.com/continuous-integration
-https://semaphoreci.com/blog/cicd-pipeline
-https://explainagile.com/agile/xp-extreme-programming/practices/continuous-integration/ -->
+#### References
+
+[Continuous Integration](https://semaphoreci.com/continuous-integration)
+[Continuous Integration - Pipelines](https://semaphoreci.com/blog/cicd-pipeline)
+[Continuous Integration - Agile](https://explainagile.com/agile/xp-extreme-programming/practices/continuous-integration/)
 
 ## How did I create my CI Pipeline?
 
@@ -43,4 +45,5 @@ As you can see in the image above, I started by creating a '.github' folder in r
 Okay great.. so now we have to actually fill the content inside of our newly created YAML file so that we can configure a pipeline and what jobs should be done inside of it.
 
 If you follow this link: [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml), you will get straight to my configured YAML file to see what it looks like. Or if you prefer, have a look at the image below.
+
 ![Filepath for YAML File](/images/yamlfile.png){:width="650px"}
