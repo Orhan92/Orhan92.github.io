@@ -49,3 +49,14 @@ Okay great.. so now we have to actually fill the content inside of our newly cre
 If you follow this link: [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml), you will get straight to my configured YAML file to see what it looks like. Or if you prefer, have a look at the image below.
 
 ![Filepath for YAML File](/images/yamlfile.png){:width="650px"}
+
+To start my journey I found get a very good .NET template at [Github](https://docs.github.com/en/actions/guides/building-and-testing-net) that I modified to suit my Spacepark v1 project. I recommend you to look at the link because there is some very good documentation inside of it and might be helpful on your journey aswell. In the beginning I didn't have ny idea of what jobs, steps, uses (also called Actions) and so on meant. Actually I didn't have any clue until I came across this [Github Actions Documentation](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions). Another very good recommendation is to check this [GitHub Workflow Syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows) out. Anyways, below I will go through my [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml) step by step with you so that you might get a hint or clue of what each step means.
+
+#### Workflows
+
+#### References
+
+[Understanding Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
+[Workflow Syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows)
+[Example Templates](https://docs.github.com/en/actions/guides/building-and-testing-net)
+[Introduktion to GitHub Actions](https://gabrieltanner.org/blog/an-introduction-to-github-actions)
