@@ -56,11 +56,11 @@ To start my journey I found get a very good .NET template at [Github](https://do
 
 #### Workflows
 
-The workflow is the actual flow of the Pipeline. For example a workflow can be made of one or more jobs to be triggered by an event. The workflow is used to build, test, package, release, review and approve a project on GitHub.
+The workflow is the actual flow of the Pipeline. For example a workflow can be made of one or more jobs to be triggered by an event. The workflow is used to build, test, package, release, review and approve a project or commit on GitHub.
 
 #### Events
 
-An event is the cause that triggers the workflow. In my case, whenever I commit some new code into the repository I will trigger the workflow. The workflow will then start to run based on the instructions I have been giving inside my YAML file.
+An event is the cause that triggers the workflow. In my case, whenever I commit some new code into the repository I will trigger the workflow. The workflow will then start to run based on the instructions I have been giving it inside of my [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml).
 
 #### Name
 
@@ -72,7 +72,7 @@ These are instructions that listens for available jobs. It runs one job at the t
 
 #### jobs
 
-A job is basically what we are telling our workflow to do. For instance, in the YAML file in this case, we can see that the first job is to configure the job to build and run on ubuntu-latest `runs-on: ubuntu-latest`. In this case the job will execute on a virtual machine hosted by GitHub. Followed by the strategy and matrix where we tell the job to look if we can build on `dotnet-version: ['5.0.x']`. REMEMBER that all these jobs or steps are made sequentially and if one fails then the job will fail or get canceled (then you have to look inside the logs to see what's wrong).
+A job is basically what we are telling our workflow to do. For instance, in the YAML file in this case, we can see that the first job is to configure the job to build and run on ubuntu-latest `runs-on: ubuntu-latest`. In this case the job will execute on a virtual machine hosted by GitHub. Followed by the strategy and matrix where we tell the job to look if we can build our code on `dotnet-version: ['5.0.x']`. REMEMBER that all these jobs or steps are made sequentially and if one fails then the job will fail or get canceled (then you have to look inside the logs to see what's wrong).
 
 #### steps
 
@@ -85,15 +85,34 @@ This is where all the steps are grouped together to run where each item is neste
 ```
 
 After the instructions above it is actually time for your workflow to go through what you want it to go through. In this case we will need to install every dependency that the project contains, we will see if the project can build without any failures and lastly we will run the tests within the repository which can be found here: [SpaceTest](https://github.com/Orhan92/spacepark-spaceinvaders/tree/CI-test-%26-build/Source/SpaceTest).
+
+```
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
+```
+
 As I said before these actions are all executed sequentially which means if the workflow can't build the project, it won't even bother going through the tests and a 'Failure' response will be sent out to the developer(s) who committed the change.
 
-If, everything is fine and we passed the test(s), we can then safely accept the commit and merge it into the [Main](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/.github/workflows/CI-test-%26-build.yml) branch and delete the branch we created in the beginning.
+If, everything is fine and we passed the test(s), we can then safely accept the commit and merge it, after approval, into the [Main](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/.github/workflows/CI-test-%26-build.yml) branch for CD (Continuous Deployment). Thereafter we can delete the branch we created in the beginning safely.
 
 To illustrate the sequential steps that are made by the workflow see the image below:
 
 ![Job finished](/images/job.png)
 
 In the image you can clearly see that the workflow have sequentially executed all the steps or instructions that we gave inside the [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml). And if everything passes, great, you are ready to merge it into the main branch and voila, you have now created your first CI Pipeline (even if it is a basic one that only builds and runs the tests).
+
+### Flaws inside this CI Pipeline
+
+I have excluded parts of the source code tests where those tests are running/checking against a local database, which in this case wont work. For it to work, I would probably have to remake the database structure into SQLite or Dockerize the database so that we can access it through the YAML file. But in this case, our database only exists locally, therefore I had to Exclude some tests which can be seen here: [Tests](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/Source/SpaceTest/UnitTest1.cs). Look for these lines of code:
+
+```
+[Fact(Skip = "Because of local database can't be read in GitHub CI, remove this Skip once another database have been setup like (SQL or through Docker)")]
+public void When_Inserting_ParkingData_In_Database_Expect_AnakinSkywalker_ParkingPrice_1h()
+```
 
 #### References
 
