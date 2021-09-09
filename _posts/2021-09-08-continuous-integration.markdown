@@ -37,3 +37,10 @@ By forking a repository means that I copy that repository and create an exact co
 
 Next step in the process was to create a YAML file inside my new forked repository. But before I show you what that looks like, make sure that whenever you create that YAML file, create it in a new branch and NOT inside of main as we will test the CI Pipeline when we push from this newly created branch into the main branch. It should look something like this:
 ![Filepath for YAML File](/images/yamlworkdir.png){:width="650px"}
+
+As you can see in the image above, I started by creating a '.github' folder in root of the newly created branch (CI-test-&-build) followed by another folder called 'workflows', and inside the 'workflows' folder i created my YAML file called 'CI-test-&-build' because that is exactly what my pipeline will do!
+
+Okay great.. so now we have to actually fill the content inside of our newly created YAML file so that we can configure a pipeline and what jobs should be done inside of it.
+
+If you follow this link: [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml), you will get straight to my configured YAML file to see what it looks like. Or if you prefer, have a look at the image below.
+![Filepath for YAML File](/images/yamlfile.png){:width="650px"}
