@@ -29,7 +29,9 @@ The importance of using CI Pipelines is maybe to some very clear and to others n
 #### References
 
 [Continuous Integration](https://semaphoreci.com/continuous-integration)
+
 [Continuous Integration - Pipelines](https://semaphoreci.com/blog/cicd-pipeline)
+
 [Continuous Integration - Agile](https://explainagile.com/agile/xp-extreme-programming/practices/continuous-integration/)
 
 ## How did I create my CI Pipeline?
