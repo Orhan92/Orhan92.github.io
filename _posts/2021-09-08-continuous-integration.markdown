@@ -100,7 +100,7 @@ In the image you can clearly see that the workflow have sequentially executed al
 
 I have excluded parts of the source code tests where those tests are running/checking against a local database, which in this case wont work. For it to work, I would probably have to remake the database structure into SQLite or Dockerize the database so that we can access it through the YAML file. But in this case, our database only exists locally, therefore I had to Exclude some tests which can be seen here: [Tests](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/Source/SpaceTest/UnitTest1.cs). Look for these lines of code:
 
-![tests](/images/test.png)
+![tests](/images/test.png){:width="1200px"}
 
 #### References
 
