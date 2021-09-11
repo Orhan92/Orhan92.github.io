@@ -78,7 +78,7 @@ A job is basically what we are telling our workflow to do. For instance, in the 
 
 #### Steps
 
-This is where all the steps are grouped together to run where each item is nested and executed sequentially. So in the first step we are using this line of code: `- uses: actions/checkout@v2` where we basically tell the job to retrieve version 2 of the community action. This one is checking out your action from your repository and downloads it into the runner where you can for example test against the code inside your repository. Next step is to setup the IDE inside the job which in this case is .NET Core SDK and .NET version 5.0.x:
+This is where all the steps are grouped together to run where each item is nested and executed sequentially. So in the first step we are using this line of code: `- uses: actions/checkout@v2` where we basically tell the job to retrieve version 2 of the community action. This one is checking out your action from your repository and downloads it into the runner where you can for example test against the code inside your repository. Next step is to setup the platform and version of it inside the job which in this case is .NET Core SDK and .NET version 5.0.x:
 
 ![illustration 1](/images/name.png)
 
