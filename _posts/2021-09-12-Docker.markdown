@@ -9,7 +9,7 @@ background: "/images/image1.jpg"
 
 # Introduction
 
-This blog post will be all about working with Docker and containers. We are going to build and run a container based on this repo: [Simple Hello World app](https://github.com/skjohansen/SimpleWebHalloWorld). The second part will be about working with Docker Compose on the same repo (even though it is not really necessary for this particular repository because we are not in any need of multiple containers in this example). But it is a good practice to also work with Docker Compose as it will be needed in the future working with bigger applications because of the need of multiple containers (services). Last step in this blog post will be about building a GitHub pipeline and publish this application to GitHub packages. When all steps are done, we should be able to login to our GitHub packages with Docker and pull our image with `docker pull`.
+This blog post will be all about working with Docker and containers. We are going to build and run a container based on this repo: [Simple Hello World app](https://github.com/skjohansen/SimpleWebHalloWorld). The second part will be about working with Docker Compose on the same repo (even though it is not really necessary for this particular repository because we are not in any need of multiple containers in this example). But it is a good practice to also work with Docker Compose as it can be needed in the future working with bigger applications because of the need of multiple containers (services). Last step in this blog post will be about building a GitHub pipeline and publish this application to GitHub Registry. When all steps are done, we should be able to pull our created image with `docker pull`.
 
 ## Dockerfile
 
