@@ -32,21 +32,21 @@ I will reference back to the explanation above to explain this image.
 
 Well, there are a few steps to be made. But lets assume we have the Dockerfile configured inside of a project. For example, lets take this entire repo: [Simple Hello World](https://github.com/Orhan92/SimpleWebHalloWorld). I will tell you how to run this image step by step down below.
 
-1. Lets assume we are working with CMD. So the first step to do is to direct our console to the working directory (e.g inside the directory where the dockerfile can be found). In my case it would look something like this.
+- 1. Lets assume we are working with CMD. So the first step to do is to direct our console to the working directory (e.g inside the directory where the dockerfile can be found). In my case it would look something like this.
 
 ![Working Directory](/images/workdir.png)
 
-2. Now that we are inside the working directory, we will have to tell our dockerfile to build the image. This can be done by this command: `docker build . -t simplehelloworld`. Once this command is executed you will see that your dockerfile will start to build based on how you configured it. Notice that `.` will tell our command to build everything and with `-t` we are naming our image. I'll illustrate in the picture below.
+- 2. Now that we are inside the working directory, we will have to tell our dockerfile to build the image. This can be done by this command: `docker build . -t simplehelloworld`. Once this command is executed you will see that your dockerfile will start to build based on how you configured it. Notice that `.` will tell our command to build everything and with `-t` we are naming our image. I'll illustrate in the picture below.
 
 ![Docker-build](/images/docker-build.png)
 
-3. We have now successfully build the image. So the next step would be to run this image / application inside a container. Therefore we need to specify and run the image. You can execute this command: `docker images` to see which images you have built. It should look something like this:
+- 3. We have now successfully build the image. So the next step would be to run this image / application inside a container. Therefore we need to specify and run the image. You can execute this command: `docker images` to see which images you have built. It should look something like this:
 
 ![Docker-image](/images/docker-image.png)
 
 As you can see our image which we named simplehelloworld will show up together with a image ID. If you want to delete this image you can do so by executing this command: `docker rmi *Image ID*`. Notice that it works perfecty fine if you only give the first 3 letters/digits of the ID. You image will be removed.
 
-4. Now that we have our image it is time to run it inside of a container. We can do so by executing this command: `docker run -d -p 8080:80 simplehelloworld`. So this command is running our image inside of a container. The run command makes sure we do that. `-d` tells us to run this container in detached mode and with `-p 8080:80` we are telling our container to run on port 8080 and to listen for port 80 inside of Docker. Now we can actually access our container by opening up our web browser and type: `http://localhost:8080`. Good job, your application is now running inside a container. I also want to add that `docker ps` command will show you all of your current running containers. If you would like to see a container history you could just execute this command: `docker ps -a`. This way you will see when the container started and when it exited. Lets have a look at the picture below:
+- 4. Now that we have our image it is time to run it inside of a container. We can do so by executing this command: `docker run -d -p 8080:80 simplehelloworld`. So this command is running our image inside of a container. The run command makes sure we do that. `-d` tells us to run this container in detached mode and with `-p 8080:80` we are telling our container to run on port 8080 and to listen for port 80 inside of Docker. Now we can actually access our container by opening up our web browser and type: `http://localhost:8080`. Good job, your application is now running inside a container. I also want to add that `docker ps` command will show you all of your current running containers. If you would like to see a container history you could just execute this command: `docker ps -a`. This way you will see when the container started and when it exited. Lets have a look at the picture below:
 
 ![Docker-Container](/images/docker-container.png)
 
