@@ -36,7 +36,7 @@ Well, there are a few steps to be made. But lets assume we have the Dockerfile c
 
 ![Working Directory](/images/workdir.png)
 
-2. Now that we are inside the working directory, we will have to tell our dockerfile to build the image. This can be done by this command: `docker build . -t simplehelloworld`. Once this command is executed you will see that your dockerfile will start to build based on how you configured it. Notice that `.` will tell our command to build everything and with `-t` we are naming our image. I'll illustrate in the image below.
+2. Now that we are inside the working directory, we will have to tell our dockerfile to build the image. This can be done by this command: `docker build . -t simplehelloworld`. Once this command is executed you will see that your dockerfile will start to build based on how you configured it. Notice that `.` will tell our command to build everything and with `-t` we are naming our image. I'll illustrate in the picture below.
 
 ![Docker-build](/images/docker-build.png)
 
