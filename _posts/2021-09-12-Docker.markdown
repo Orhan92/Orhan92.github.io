@@ -26,7 +26,7 @@ After we have built the application inside our Dockerfile, we are using that bui
 
 ![Dockerfile-manual](/images/dockerfile-manual.png)
 
-I will reference back to the explanation above to explain the image above.
+I will reference back to the explanation above to explain this image.
 
 ### How do we actually run this Dockerfile inside a container?
 
