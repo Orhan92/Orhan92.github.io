@@ -40,7 +40,7 @@ Okay, first of all I have forked an older project called Spacepark v1 (spacepark
 By forking a repository means that I copy that repository and create an exact copy of it in my own repository (see the link): [Forked Spacepark v1](https://github.com/Orhan92/spacepark-spaceinvaders).
 
 Next step in the process was to create a YAML file inside my new forked repository. But before I show you what that looks like, make sure that whenever you create that YAML file, create it in a new branch and NOT inside of main as we will test the CI Pipeline when we merge it from this newly created branch into the main branch. It should look something like this:
-![Filepath for YAML File](/images/yamlworkdir.png){:width="650px"}
+![Filepath for YAML File](/images/yamlworkdir.png){:class="img-fluid"}
 
 As you can see in the image above, I started by creating a '.github' folder in root of the newly created branch (CI-test-&-build) followed by another folder called 'workflows', and inside the 'workflows' folder i created my YAML file called 'CI-test-&-build' because that is exactly what my pipeline will do!
 
@@ -48,7 +48,7 @@ Okay great.. so now we have to actually fill the content inside of our newly cre
 
 If you follow this link: [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml), you will get straight to my configured YAML file to see what it looks like. Or if you prefer, have a look at the image below.
 
-![Filepath for YAML File](/images/yamlfile.png){:width="650px"}
+![Filepath for YAML File](/images/yamlfile.png){:class="img-fluid"}
 
 To start my journey I came across a very good .NET template at [Github](https://docs.github.com/en/actions/guides/building-and-testing-net) that I modified to suit my Spacepark v1 project. I recommend you to have a look at the link because there is some very good documentation inside of it and might be helpful on your journey aswell. In the beginning I didn't have ny idea of what jobs, steps, uses (also called Actions) and so on meant. Actually I didn't have any clue until I came across this [Github Actions Documentation](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions). Another very good recommendation is to check this [GitHub Workflow Syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows) out. Anyways, below I will go through my [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml) step by step with you so that you might get a hint or clue of what each step means.
 
@@ -80,11 +80,11 @@ A job is basically what we are telling our workflow to do. For instance, in the 
 
 This is where all the steps are grouped together to run where each item is nested and executed sequentially. So in the first step we are using this line of code: `- uses: actions/checkout@v2` where we basically tell the job to retrieve version 2 of the community action. This one is checking out your action from your repository and downloads it into the runner where you can for example test against the code inside your repository. Next step is to setup the platform and version of it inside the job which in this case is .NET Core SDK and .NET version 5.0.x:
 
-![illustration 1](/images/name.png)
+![illustration 1](/images/name.png){:class="img-fluid"}
 
 After the instructions above it is actually time for your workflow to go through what you want it to go through. In this case we will need to install every dependency that the project contains, we will see if the project can build without any failures and lastly we will run the tests within the repository which can be found here: [SpaceTest](https://github.com/Orhan92/spacepark-spaceinvaders/tree/CI-test-%26-build/Source/SpaceTest).
 
-![illustration 2](/images/name1.png)
+![illustration 2](/images/name1.png){:class="img-fluid"}
 
 As I said before these actions are all executed sequentially which means if the workflow can't build the project, it won't even bother going through the tests and a 'Failure' response will be sent out to the developer(s) who committed the change.
 
@@ -92,7 +92,7 @@ If, everything is fine and we passed the test(s), we can then safely accept the 
 
 To illustrate the sequential steps that are made by the workflow see the image below:
 
-![Job finished](/images/Job.png){:width="650px"}
+![Job finished](/images/Job.png){:class="img-fluid"}
 
 In the image you can clearly see that the workflow have sequentially executed all the steps or instructions that we gave inside the [YAML File](https://github.com/Orhan92/spacepark-spaceinvaders/blob/CI-test-%26-build/.github/workflows/CI-test-&-build.yml). And if everything passes, great, you are ready to merge it into the main branch and voila, you have now created your first CI Pipeline (even if it is a basic one that only builds and runs the tests).
 
@@ -100,7 +100,7 @@ In the image you can clearly see that the workflow have sequentially executed al
 
 I have excluded parts of the source code tests where those tests are running/checking against a local database, which in this case wont work. For it to work, I would probably have to remake the database structure into SQLite or Dockerize the database so that we can access it through the YAML file. But in this case, our database only exists locally, therefore I had to Exclude some tests which can be seen here: [Tests](https://github.com/Orhan92/spacepark-spaceinvaders/blob/main/Source/SpaceTest/UnitTest1.cs). Look for these lines of code:
 
-![tests](/images/test.png){:width="1000px"}
+![tests](/images/test.png){:class="img-fluid"}
 
 #### References
 
