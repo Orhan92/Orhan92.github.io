@@ -56,4 +56,52 @@ So as a last step I will show you how to stop your running container and how to 
 
 ## GitHub Pipeline publishing Docker Image with GitHub Registry
 
-In this step it is time to create a pipeline that builds our dockerfile, and if everything passes we will push it to GitHub registry where we later can pull the image.
+In this step it is time to create a pipeline that builds our dockerfile, and if everything passes we will push it to GitHub registry where we later can pull the image with the ``docker pull` command.
+
+Lets have a look at the pipeline. You can find the YAML file here: [Pipeline - YAML File](https://github.com/Orhan92/SimpleWebHalloWorld/blob/master/.github/workflows/pipeline%20build.yml)
+
+Or if you prefer, have a look at the picture below.
+
+![Pipeline](/images/docker-pipeline.png){:class="img-fluid"}
+
+I will not go through details of every step in this pipeline. If you would like to know more about that, have a look at my [Continuous Integration Blog Post](https://orhan92.github.io/jekyll/update/2021/09/08/continuous-integration.html). But I will go through what this Pipeline is doing and how it is built. We are triggering our pipeline on every commit that is made which we can tell on this line of code `on: [push] `. This pipeline will, build the application which we will do in the first step`- uses: actions/checkout@v2`. The `QEMU` action is usefull if we want to build against more platforms and the `Buildx` action will will create and boot a builder by using [docker-container builder driver](https://github.com/docker/buildx/blob/master/docs/reference/buildx_create.md#driver). Next step is to login into GitHub Container Registry (ghcr.io) where we explicitly tell our pipeline to use our github username as username and a secret token as password. So what is a secret token and how are we able to set this up? If you would like a more detailed answer to this I recommend that you look through this post: [GitHub Tokens and Secrets](https://itnext.io/build-ship-github-container-registry-kubernetes-aa06029b3f21#0075). Basically, what I did was to navigate to my GitHub account -> Settings -> Developer Settings -> `Personal Access Tokens`. Once I navigated to 'Personal Access Tokens' I generated a new token on the upper right corner. See the link above to configure a token. The next step was to generate a `Secret` inside my repository. This is how to navigate to repository settings:
+
+![Repo settings](/images/repo-settings.png){:class="img-fluid"}
+
+Once we navigated our way to the repository settings, the next step would be to go to `Secrets`. Then we have to create a `New repository secret` in the upper right corner. When we create the secret we have to name it exactly the way we are calling for it inside of our YAML file. In our case we have this line of code: `password: ${{ secrets.CR_PAT }}`. That means that our secret should be named `CR_PAT`. Right after we named the secret it is time to paste the `Personal Access Token` which we created and received in the first step. Great, we are now set and have a secret which our YAML File can read from. This will also be our credentials when we sign into ghcr.io inside our pipeline. If the docker build succeeds (which is our last step in the YAML file) and every other step inside of our `jobs:` then our pipeline will build and push this image into GitHub Registry.
+
+So, how do we know that our image has been pushed into the registry? Well, we can always check that in our GitHub profile.
+
+![Package](/images/package.png){:class="img-fluid"}
+
+If we click on the package, we can see the README file that is connected to the repository AND how to actually pull this image from GitHub Registry.
+
+![Image pull](/images/img-pull.png){:class="img-fluid"}
+
+As a last step, lets have a look at how it is to pull this image based on the information in the image above. So what we will do is to execute the command (in this case inside of CMD) and see inside Docker Desktop if the image was pulled.
+
+![Image pulled from ghcr](/images/image-pulled.png){:class="img-fluid"}
+
+The image was successfully pulled from GitHub Registry as can be seen on the picture.
+
+### Conclusion
+
+A list of what we've been covering in this particular blog post.
+
+- How to create a Dockerfile
+- How to build/create an Image
+- How to run a container
+- How to build a Pipeline that pushed our Docker Image into GitHub Registry
+- How to generate tokens and secrets on a particular repository
+
+#### References
+
+- [What is Docker?](https://medium.com/swlh/what-exactly-is-docker-1dd62e1fde38)
+
+- [Dockerfile](https://softchris.github.io/pages/dotnet-dockerize.html#create-a-dockerfile)
+
+- [Docker Containers](https://codemag.com/Article/2103061/Introduction-to-Containerization-Using-Docker)
+
+- [Docker Pipeline](https://github.com/docker/build-push-action)
+
+- [Secrets and Tokens](https://itnext.io/build-ship-github-container-registry-kubernetes-aa06029b3f21#0075)
