@@ -107,3 +107,7 @@ After I modified the code, the function looked like this:
             <span style="color: #008000;">&#125;</span>
         <span style="color: #008000;">&#125;</span>
     <span style="color: #008000;">&#125;</span></pre>
+
+So the code above now works as a calculator function which takes your `name`, `firstValue` and `secondValue` as a input. Then based on those first and second value the output will show a sum (result).
+
+At this point the Bronze part is done and it is time to move on to the **Silver** exercise.
