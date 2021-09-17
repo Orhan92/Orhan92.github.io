@@ -69,3 +69,5 @@ namespace LocalFunctionProj
     }
 }
 ```
+
+At this point all the function did was to take a name input and printed it out to the user. I had to modify this code to act like an addition calculator. I also added a try and catch clausule to make sure the errorhandling was correct.
