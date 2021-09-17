@@ -168,11 +168,9 @@ So, if the Action passes, then our workflow will deploy this to Azure and our ch
 
 ## Function Tests
 
-There are many different ways to test this function. One way was to test it locally as I showed before in the **Bronze** section. But it is also possible to test this function through Azure Portal. See the image below for illustration for inputs:
+There are many different ways to test this function. One way was to test it locally as I showed before in the **Bronze** section. But it is also possible to test this function through Azure Portal. See the image below for illustration for inputs and output:
 
 ![Input Azure Portal](/images/azureportalinput.png){:class="img-fluid"}
-
-Output:
 
 ![Output Azure Portal](/images/azureportaloutput.png){:class="img-fluid"}
 
