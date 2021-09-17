@@ -36,40 +36,38 @@ FaaS (Function as a Service) is a serverless way to execute pieces of code. With
 
 The first step was to actually create the function. I chose to do so by using my CLI and executed commands to actually create my project. For further details see [Create HttpTrigger Azure function with C# with CMD](https://docs.microsoft.com/sv-se/azure/azure-functions/create-first-function-cli-csharp?tabs=in-process%2Cazure-cli). After all steps was executed, I created a folder which contained my Azure HttpTrigger function which looked like this:
 
-```csharp
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-
-namespace LocalFunctionProj
-{
-    public static class HttpExample
-    {
-        [FunctionName("HttpExample")]
-        public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            ILogger log)
-        {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            return name != null
-                ? (ActionResult)new OkObjectResult($"Hello, {name}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
-        }
-    }
-}
-```
+<pre class="csharp" style="font-family:monospace;"><span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.IO</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">System.Threading.Tasks</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Microsoft.AspNetCore.Mvc</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Microsoft.Azure.WebJobs</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Microsoft.Azure.WebJobs.Extensions.Http</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Microsoft.AspNetCore.Http</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Microsoft.Extensions.Logging</span><span style="color: #008000;">;</span>
+<span style="color: #0600FF; font-weight: bold;">using</span> <span style="color: #008080;">Newtonsoft.Json</span><span style="color: #008000;">;</span>
+&nbsp;
+<span style="color: #0600FF; font-weight: bold;">namespace</span> LocalFunctionProj
+<span style="color: #008000;">&#123;</span>
+    <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">class</span> HttpExample
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008000;">&#91;</span>FunctionName<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;HttpExample&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">async</span> Task<span style="color: #008000;">&lt;</span>IActionResult<span style="color: #008000;">&gt;</span> Run<span style="color: #008000;">&#40;</span>
+            <span style="color: #008000;">&#91;</span>HttpTrigger<span style="color: #008000;">&#40;</span>AuthorizationLevel<span style="color: #008000;">.</span><span style="color: #0000FF;">Anonymous</span>, <span style="color: #666666;">&quot;get&quot;</span>, <span style="color: #666666;">&quot;post&quot;</span>, Route <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> HttpRequest req,
+            ILogger log<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+            log<span style="color: #008000;">.</span><span style="color: #0000FF;">LogInformation</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;C# HTTP trigger function processed a request.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&nbsp;
+            <span style="color: #6666cc; font-weight: bold;">string</span> name <span style="color: #008000;">=</span> req<span style="color: #008000;">.</span><span style="color: #0000FF;">Query</span><span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;name&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+&nbsp;
+            <span style="color: #6666cc; font-weight: bold;">string</span> requestBody <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">await</span> <span style="color: #008000;">new</span> StreamReader<span style="color: #008000;">&#40;</span>req<span style="color: #008000;">.</span><span style="color: #0000FF;">Body</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ReadToEndAsync</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #6666cc; font-weight: bold;">dynamic</span> data <span style="color: #008000;">=</span> JsonConvert<span style="color: #008000;">.</span><span style="color: #0000FF;">DeserializeObject</span><span style="color: #008000;">&#40;</span>requestBody<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            name <span style="color: #008000;">=</span> name <span style="color: #008000;">??</span> data<span style="color: #008000;">?.</span><span style="color: #0000FF;">name</span><span style="color: #008000;">;</span>
+&nbsp;
+            <span style="color: #0600FF; font-weight: bold;">return</span> name <span style="color: #008000;">!=</span> <span style="color: #0600FF; font-weight: bold;">null</span>
+                <span style="color: #008000;">?</span> <span style="color: #008000;">&#40;</span>ActionResult<span style="color: #008000;">&#41;</span><span style="color: #008000;">new</span> OkObjectResult<span style="color: #008000;">&#40;</span>$<span style="color: #666666;">&quot;Hello, {name}&quot;</span><span style="color: #008000;">&#41;</span>
+                <span style="color: #008000;">:</span> <span style="color: #008000;">new</span> BadRequestObjectResult<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Please pass a name on the query string or in the request body&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span>
+<span style="color: #008000;">&#125;</span></pre>
 
 At this point all the function did was to take a name input and printed it out to the user. I had to modify this code to act like an addition calculator. I also added a try and catch clausule to make sure we had some error handling in the code.
