@@ -147,3 +147,19 @@ az functionapp create \
   --deployment-source-url $gitrepo \
   --deployment-source-branch master \
   --functions-version 2</pre>
+
+So the first step was to navigate to **GitHub --> Account --> Settings --> Developer settings --> Personal Access tokens --> Generate new token**. See the [Step-by-Step instructions](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) for how to setupd the token. Make sure to copy the token and follow the instructions from the code block above.
+
+What I did was to follow every instruction in the code block shown above. When that was done I could login to my Azure portal and see that my resources have been created. It should look like this based on your configuration:
+
+![Azure portal](/images/azureportal.png){:class="img-fluid"}
+
+Great, we have now created our resource group inside Azure portal from our GitHub repository. But there was one last thing to do before actually being able to Test & Run the function inside Azure portal because our function have been deployed as Read-Only. To go around that and make it possible to Test our function inside Azure portal I had to run this command: `func azure functionapp publish AdditionCalculator --force --nozip`. Once this command was run I could actually start testing my function inside the portal and it was no longer Read-Only mode. I had access to the function now. I had to go through this link to figure out how to work around this problem: [Disable Read Only](https://stackoverflow.com/questions/53630773/how-to-disable-read-only-mode-in-azure-function-app).
+
+Now that we have deployed our function app into Azure Portal it is time to move on to the **Gold** Exercise and create a pipeline to deploy our function into Azure.
+
+## Gold Exercise
+
+So, what I did to make this GitHub Actions Pipeline work was to read through [Azure Functions Action](https://github.com/marketplace/actions/azure-functions-action) carefully. After I had gone through every step, My pipeline was now working properly with Repository Secrets and my YAML file. See my [YAML-File](https://github.com/Orhan92/AzureFunctionCalculator/blob/main/.github/workflows/azure-deployment.yml) to see how to pipeline works. If you look at the 'Azure Functions Action' link above, then you will see exactly step-by-step instructions of how I did to deploy my application through a pipeline with GitHub Actions. See the image below for an overview of my workflow action:
+
+![Azure pipeline](/images/azurepipeline.png){:class="img-fluid"}
