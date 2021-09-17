@@ -163,3 +163,71 @@ Now that we have deployed our function app into Azure Portal it is time to move 
 So, what I did to make this GitHub Actions Pipeline work was to read through [Azure Functions Action](https://github.com/marketplace/actions/azure-functions-action) carefully. After I had gone through every step, My pipeline was now working properly with Repository Secrets and my YAML file. See my [YAML-File](https://github.com/Orhan92/AzureFunctionCalculator/blob/main/.github/workflows/azure-deployment.yml) to see how to pipeline works. If you look at the 'Azure Functions Action' link above, then you will see exactly step-by-step instructions of how I did to deploy my application through a pipeline with GitHub Actions. See the image below for an overview of my workflow action:
 
 ![Azure pipeline](/images/azurepipeline.png){:class="img-fluid"}
+
+So, if the Action passes, then our workflow will deploy this to Azure and our changes will be applied to our function. For instance if I would remove the calculator function and go back to the original state of the function (only name input) and then commit this change. We would first go through the Pipeline and then once the workflow jobs have passed it will be deployed to Azure and our function will no longer contain a calculator. This is how the pipeline works.
+
+## Function Tests
+
+There are many different ways to test this function. One way was to test it locally as I showed before in the **Bronze** section. But it is also possible to test this function through Azure Portal. See the image below for illustration for inputs:
+
+![Input Azure Portal](/images/azureportalinput.png){:class="img-fluid"}
+
+Output:
+
+![Output Azure Portal](/images/azureportaloutput.png){:class="img-fluid"}
+
+Second way of testing our function is to test it with the public URL which you can test from your computer if you want to. See the image illustration below where the highlighted part is the input values:
+
+![Public URL](/images/publicurltest.png){:class="img-fluid"}
+
+Lastly we can also test this function through Postman Services which I did. So the first thing we have to to inside our postman is to add this URL to the Postman so that we know where to look for the function: `https://additioncalculator.azurewebsites.net/api/CalculatorFunction?code=tBhXSSny7Vv/NjBCgj1watiBiBkRxQEbjcfwGr/Il/dEgh0ePFb0EQ==`. Once inside our Postman Agent we can test GET and POST method and give it values to try the function out.
+
+Postman GET illustration below:
+
+![Postman GET](/images/postmanget.png){:class="img-fluid"}
+
+Postman POST illustration below:
+
+![Postman POST](/images/postmanpost.png){:class="img-fluid"}
+
+Postman POST Illustration with errorhandling, the highlighted area is where I show invalid input and the output from the API/Function:
+
+![Postman Invalid POST](/images/postmaninvalid.png){:class="img-fluid"}
+
+As you can see our Try and Catch clausule which can be found in my [Function file](https://github.com/Orhan92/AzureFunctionCalculator/blob/main/CalculatorFunction.cs) handeled the error and gave us a BadRequest in return.
+
+## Security Issues
+
+I haven't really considered the security threats available here in this function application because I found no need for it here. But of course if this were to be a bigger application of matter or distributed to clients, then security meassurements have to be considered. But one thing that can be considered in this function is that there is no authentications needed to use the API/function. Therefore it is open to anyone for usage. One thing that could be added into this function is Authentication through API Keys to restrict this function for public use.
+
+### References
+
+##### Prerequisities
+
+[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
+
+[Azure Function tools](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2)
+
+##### Serverless and FaaS description
+
+[About Serverless](https://geekflare.com/know-about-serverless/)
+
+[Why Serverless?](https://hackernoon.com/why-serverless-why-now-f09ce43c4767)
+
+[Function as a Service](https://www.cloudflare.com/learning/serverless/glossary/function-as-a-service-faas/)
+
+[Learn about FaaS](https://www.ibm.com/se-en/cloud/learn/faas)
+
+##### Create a function project with CLI
+
+[Create Azure function with CLI](https://docs.microsoft.com/sv-se/azure/azure-functions/create-first-function-cli-csharp?tabs=in-process%2Cazure-cli)
+
+##### GitHub Deployment
+
+[Deployment with CLI](https://docs.microsoft.com/bs-cyrl-ba/azure//azure-functions/scripts/functions-cli-create-function-app-github-continuous)
+
+[Generate Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+##### Troubleshooting
+
+[Disable Read Only mode](https://stackoverflow.com/questions/53630773/how-to-disable-read-only-mode-in-azure-function-app)
