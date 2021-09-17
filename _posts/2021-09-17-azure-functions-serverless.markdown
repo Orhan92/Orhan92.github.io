@@ -113,3 +113,37 @@ So the code above now works as a calculator function which takes your `name`, `f
 At this point the Bronze part is done and it is time to move on to the **Silver** exercise as this function only works locally at this point because we have not deployed it into Azure Portal. That is what we will do in the **Silver** step. But so far we can run our function locally by being inside the working directory inside our CMD. In my case I execute this command: `cd source/repos/LocalFunctionProj`. Once inside the working directory we can execute `func start` command in order to run our function locally. If we then navigate to the localhost (which will be given to you inside your CMD), we can then see the behaviour of our function and add values to the function. See the image illustration below where the highlighted part is where I add the value inputs.
 
 ![Local function](/images/localfunc.png){:class="img-fluid"}
+
+## Silver Exercise
+
+I started with pushing my created project from the **Bronze** step to GitHub using my Command Line. For further details see [Adding an existing project to GitHub using the Command Line](https://docs.github.com/en/github/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line).
+
+Now that we have created a GitHub repository to our project it is time to deploy this function into Azure from GitHub. The documentation I followed is from this link: [Deploy Azure Function app from GriHub](https://docs.microsoft.com/bs-cyrl-ba/azure//azure-functions/scripts/functions-cli-create-function-app-github-continuous).
+
+This is the code that was used to create and deploy our code from GitHub to Azure (These where executed from CMD):
+
+<pre class="yaml" style="font-family:monospace;"><span style="color: blue;"># Enable authenticated git deployment in your subscription from a private repo.</span>
+az functionapp deployment source update-token \
+  --git-token $token
+&nbsp;
+<span style="color: blue;"># Create a resource group.</span>
+az group create \
+  --name myResourceGroup \
+  --location $region
+&nbsp;
+<span style="color: blue;"># Create an Azure storage account in the resource group.</span>
+az storage account create \
+  --name $storageName \
+  --location $region \
+  --resource-group myResourceGroup \
+  --sku Standard_LRS
+&nbsp;
+<span style="color: blue;"># Create a function app with source files deployed from the specified GitHub repo.</span>
+az functionapp create \
+  --name $functionAppName \
+  --storage-account $storageName \
+  --consumption-plan-location $region \
+  --resource-group myResourceGroup \
+  --deployment-source-url $gitrepo \
+  --deployment-source-branch master \
+  --functions-version 2</pre>
