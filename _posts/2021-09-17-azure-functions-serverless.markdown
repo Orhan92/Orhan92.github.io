@@ -36,7 +36,7 @@ FaaS (Function as a Service) is a serverless way to execute pieces of code. With
 
 The first step was to actually create the function. I chose to do so by using my CLI and executed commands to actually create my project. For further details see [Create HttpTrigger Azure function with C# with CMD](https://docs.microsoft.com/sv-se/azure/azure-functions/create-first-function-cli-csharp?tabs=in-process%2Cazure-cli). After all steps was executed, I created a folder which contained my Azure HttpTrigger function which looked like this:
 
-```
+```cs
 using System;
 using System.IO;
 using System.Threading.Tasks;
