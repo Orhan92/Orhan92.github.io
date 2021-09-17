@@ -19,7 +19,9 @@ There was 3 different exercise difficulties:
 - Gold
 
 **Bronze:** Build the function with Azure Web interface (inside Azure Dashboard) OR directly insie Visual Studio or Visual Studio Code.
+
 **Silver:** Build the function (not with Azure Web interface) and then create a GitHub repository for your function. The challenge here is to deploy your Azure Function application directly from GitHub into Azure with CLI.
+
 **Gold:** Deploy your Azure Function application from GitHub Actions, in other words create a CI-pipeline with GitHub Actions that deploys your function.
 
 In this blog post I will go through **Bronze**, **Silver** and **Gold** steps and how I did to solve these exercises. Before we do that, I will make a short description och the term 'Serverless' and Function as a Service (FaaS).
