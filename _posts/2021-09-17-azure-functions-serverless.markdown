@@ -110,4 +110,6 @@ After I modified the code, the function looked like this:
 
 So the code above now works as a calculator function which takes your `name`, `firstValue` and `secondValue` as a input. Then based on those first and second value the output will show a sum (result).
 
-At this point the Bronze part is done and it is time to move on to the **Silver** exercise.
+At this point the Bronze part is done and it is time to move on to the **Silver** exercise as this function only works locally at this point because we have not deployed it into Azure Portal. That is what we will do in the **Silver** step. But so far we can run our function locally by being inside the working directory inside our CMD. In my case I execute this command: `cd source/repos/LocalFunctionProj`. Once inside the working directory we can execute `func start` command in order to run our function locally. If we then navigate to the localhost (which will be given to you inside your CMD), we can then see the behaviour of our function and add values to the function. See the image illustration below where the highlighted part is where I add the value inputs.
+
+![Local function](/images/localfunc.png){:class="img-fluid"}
