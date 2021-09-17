@@ -70,4 +70,40 @@ The first step was to actually create the function. I chose to do so by using my
     <span style="color: #008000;">&#125;</span>
 <span style="color: #008000;">&#125;</span></pre>
 
-At this point all the function did was to take a name input and printed it out to the user. I had to modify this code to act like an addition calculator. I also added a try and catch clausule to make sure we had some error handling in the code.
+At this point all the function did was to take a name input and printed it out to the user. I had to modify this code to act like an addition calculator. I also added a try and catch clausule to make sure we had some error handling in the code. You can see the source code in my repository by clicking this link: [CalculatorFunction with Try and Catch](https://github.com/Orhan92/AzureFunctionCalculator/blob/main/CalculatorFunction.cs).
+
+After I modified the code, the function looked like this:
+
+<pre class="csharp" style="font-family:monospace;"> <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #6666cc; font-weight: bold;">class</span> CalculatorFunction
+    <span style="color: #008000;">&#123;</span>
+        <span style="color: #008000;">&#91;</span>FunctionName<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;CalculatorFunction&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span>
+        <span style="color: #0600FF; font-weight: bold;">public</span> <span style="color: #0600FF; font-weight: bold;">static</span> <span style="color: #0600FF; font-weight: bold;">async</span> Task<span style="color: #008000;">&lt;</span>IActionResult<span style="color: #008000;">&gt;</span> Run<span style="color: #008000;">&#40;</span>
+            <span style="color: #008000;">&#91;</span>HttpTrigger<span style="color: #008000;">&#40;</span>AuthorizationLevel<span style="color: #008000;">.</span><span style="color: #0000FF;">Function</span>, <span style="color: #666666;">&quot;get&quot;</span>, <span style="color: #666666;">&quot;post&quot;</span>, Route <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">null</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">&#93;</span> HttpRequest req,
+            ILogger log<span style="color: #008000;">&#41;</span>
+        <span style="color: #008000;">&#123;</span>
+            log<span style="color: #008000;">.</span><span style="color: #0000FF;">LogInformation</span><span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;C# HTTP trigger function processed a request.&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&nbsp;
+            <span style="color: #0600FF; font-weight: bold;">try</span> 
+            <span style="color: #008000;">&#123;</span>
+                <span style="color: #6666cc; font-weight: bold;">string</span> name <span style="color: #008000;">=</span> req<span style="color: #008000;">.</span><span style="color: #0000FF;">Query</span><span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;name&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">;</span>
+                <span style="color: #6666cc; font-weight: bold;">string</span> requestBody <span style="color: #008000;">=</span> <span style="color: #0600FF; font-weight: bold;">await</span> <span style="color: #008000;">new</span> StreamReader<span style="color: #008000;">&#40;</span>req<span style="color: #008000;">.</span><span style="color: #0000FF;">Body</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">.</span><span style="color: #0000FF;">ReadToEndAsync</span><span style="color: #008000;">&#40;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                <span style="color: #6666cc; font-weight: bold;">dynamic</span> data <span style="color: #008000;">=</span> JsonConvert<span style="color: #008000;">.</span><span style="color: #0000FF;">DeserializeObject</span><span style="color: #008000;">&#40;</span>requestBody<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                name <span style="color: #008000;">=</span> name <span style="color: #008000;">??</span> data<span style="color: #008000;">?.</span><span style="color: #0000FF;">name</span><span style="color: #008000;">;</span>
+&nbsp;
+                <span style="color: #6666cc; font-weight: bold;">double</span> firstValue <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span>, secondValue <span style="color: #008000;">=</span> <span style="color: #FF0000;">0</span><span style="color: #008000;">;</span>
+&nbsp;
+                firstValue <span style="color: #008000;">=</span> Convert<span style="color: #008000;">.</span><span style="color: #0000FF;">ToDouble</span><span style="color: #008000;">&#40;</span>req<span style="color: #008000;">.</span><span style="color: #0000FF;">Query</span><span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;firstValue&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+                secondValue <span style="color: #008000;">=</span> Convert<span style="color: #008000;">.</span><span style="color: #0000FF;">ToDouble</span><span style="color: #008000;">&#40;</span>req<span style="color: #008000;">.</span><span style="color: #0000FF;">Query</span><span style="color: #008000;">&#91;</span><span style="color: #666666;">&quot;secondValue&quot;</span><span style="color: #008000;">&#93;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+&nbsp;
+                <span style="color: #0600FF; font-weight: bold;">var</span> sum <span style="color: #008000;">=</span> firstValue <span style="color: #008000;">+</span> secondValue<span style="color: #008000;">;</span>
+                <span style="color: #6666cc; font-weight: bold;">string</span> responseMessage <span style="color: #008000;">=</span> $<span style="color: #666666;">&quot;Name: {name}<span style="color: #008080; font-weight: bold;">\n</span>First Value: {firstValue}<span style="color: #008080; font-weight: bold;">\n</span>Second Value: {secondValue}<span style="color: #008080; font-weight: bold;">\n</span>Total sum: {firstValue} + {secondValue} = {sum}&quot;</span><span style="color: #008000;">;</span>
+&nbsp;
+                <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">new</span> OkObjectResult<span style="color: #008000;">&#40;</span>responseMessage<span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+&nbsp;
+            <span style="color: #0600FF; font-weight: bold;">catch</span> 
+            <span style="color: #008000;">&#123;</span>
+                <span style="color: #0600FF; font-weight: bold;">return</span> <span style="color: #008000;">new</span> BadRequestObjectResult<span style="color: #008000;">&#40;</span><span style="color: #666666;">&quot;Invalid calculations. Try again!&quot;</span><span style="color: #008000;">&#41;</span><span style="color: #008000;">;</span>
+            <span style="color: #008000;">&#125;</span>
+        <span style="color: #008000;">&#125;</span>
+    <span style="color: #008000;">&#125;</span></pre>
