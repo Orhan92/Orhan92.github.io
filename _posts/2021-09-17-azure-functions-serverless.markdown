@@ -152,7 +152,7 @@ So the first step was to navigate to **GitHub --> Account --> Settings --> Devel
 
 What I did was to follow every instruction in the code block shown above. When that was done I could login to my Azure portal and see that my resources have been created. It should look like this based on your configuration:
 
-![Azure portal](/images/azureportal.png){:class="img-fluid"}
+![Azure portal](/images/azureportal.jpg){:class="img-fluid"}
 
 Great, we have now created our resource group inside Azure portal from our GitHub repository. But there was one last thing to do before actually being able to Test & Run the function inside Azure portal because our function have been deployed as Read-Only. To go around that and make it possible to Test our function inside Azure portal I had to run this command: `func azure functionapp publish AdditionCalculator --force --nozip`. Once this command was run I could actually start testing my function inside the portal and it was no longer Read-Only mode. I had access to the function now. I had to go through this link to figure out how to work around this problem: [Disable Read Only](https://stackoverflow.com/questions/53630773/how-to-disable-read-only-mode-in-azure-function-app).
 
