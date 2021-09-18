@@ -178,7 +178,7 @@ Second way of testing our function is to test it with the public URL which you c
 
 ![Public URL](/images/publicurltest.png){:class="img-fluid"}
 
-Lastly we can also test this function through Postman Services which I did. So the first thing we have to to inside our postman is to add this URL to the Postman so that we know where to look for the function: `https://additioncalculator.azurewebsites.net/api/CalculatorFunction?code=tBhXSSny7Vv/NjBCgj1watiBiBkRxQEbjcfwGr/Il/dEgh0ePFb0EQ==`. Once inside our Postman Agent we can test GET and POST method and give it values to try the function out.
+Lastly we can also test this function through Postman Services which I did. So the first thing we have to do inside our postman is to add our function URL to the Postman so that we know where to look for the function: `https://additioncalculator.azurewebsites.net/api/CalculatorFunction?code=tBhXSSny7Vv/NjBCgj1watiBiBkRxQEbjcfwGr/Il/dEgh0ePFb0EQ==`. Once inside our Postman Agent we can test GET and POST method and give it values to try the function out.
 
 Postman GET illustration below:
 
