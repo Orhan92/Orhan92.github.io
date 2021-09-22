@@ -28,8 +28,6 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 
 This application runs in the cloud with two different functions that are binded to a CosmosDb. We have One GET function and one POST function. Both functions are using HTTP trigger as event listener. We use the POST function to post data into our CosmosDb and then we use the GET function to get data from our CosmosDb. The Post function requires an 'artist' and a 'title' input in order to execute and add data into the database. The Get function requires a 'searchterm' value which will search for an 'artist', based on the 'searchterm' input, inside our CosmosDb. If we get any match, the Get function will retrieve data based on the searchterm value from the database and send the response back to us. Se images below for illustration.
 
-This application also contains a Pipeline which deploys our functions in Azure portal. This means that whenever we make any changes into our functions, our pipeline will run and if it succeeds, our functions will be deployed to the portal with the new changes applied. So there is no need to manually deploy our changes as our pipeline will do that for us. See this [YAML Pipeline file](https://github.com/Orhan92/CosmosFunction/blob/main/.github/workflows/Deploy%20Azure%20Function.yml) to view pipeline code.
-
 #### Post with Postman
 
 ![Post into Database](/images/post-cosmosdb.png){:class="img-fluid"}
@@ -37,6 +35,8 @@ This application also contains a Pipeline which deploys our functions in Azure p
 #### Get with Postman
 
 ![Get into Database](/images/get-cosmosdb.png){:class="img-fluid"}
+
+This application also contains a Pipeline which deploys our functions in Azure portal. This means that whenever we make any changes into our functions, our pipeline will run and if it succeeds, our functions will be deployed to the portal with the new changes applied. So there is no need to manually deploy our changes as our pipeline will do that for us. See this [YAML Pipeline file](https://github.com/Orhan92/CosmosFunction/blob/main/.github/workflows/Deploy%20Azure%20Function.yml) to view pipeline code.
 
 ## Description of the Source Code
 
