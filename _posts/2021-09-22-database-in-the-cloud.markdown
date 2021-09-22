@@ -26,7 +26,7 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 
 ## How does the application work?
 
-This application runs in the cloud with two different functions that are binded to a CosmosDb. We have One GET function and one POST function. Both functions are using HTTP trigger as event listener. We use the POST function to post data into our CosmosDb and then we use the GET function to get data from our CosmosDb. The Post function requires an 'artist' and a 'title' input in order to execute and add data into the database. The Get function requires a 'searchterm' value which will search for an 'artist', based on the 'searchterm' input, inside our CosmosDb. If we get any match, the Get function will retrieve data based on the searchterm value from the database and send the response back to us. Se images below for illustration.
+This application runs in the cloud with two different functions that are binded to a CosmosDb. The application is meant to act as a music database. We have One GET function and one POST function. Both functions are using HTTP trigger as event listener. We use the POST function to post data into our CosmosDb and then we use the GET function to get data from our CosmosDb. The Post function requires an 'artist' and a 'title' input in order to execute and add data into the database. The Get function requires a 'searchterm' value which will search for an 'artist', based on the 'searchterm' input, inside our CosmosDb. If we get any match, the Get function will retrieve data based on the searchterm value from the database and send the response back to us. Se images below for illustration.
 
 #### Post with Postman
 
@@ -35,8 +35,6 @@ This application runs in the cloud with two different functions that are binded 
 #### Get with Postman
 
 ![Get into Database](/images/get-cosmosdb.png){:class="img-fluid"}
-
-This application also contains a Pipeline which deploys our functions in Azure portal. This means that whenever we make any changes into our functions, our pipeline will run and if it succeeds, our functions will be deployed to the portal with the new changes applied. So there is no need to manually deploy our changes as our pipeline will do that for us. See this [YAML Pipeline file](https://github.com/Orhan92/CosmosFunction/blob/main/.github/workflows/Deploy%20Azure%20Function.yml) to view pipeline code.
 
 ## Description of the Source Code
 
@@ -57,3 +55,8 @@ This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction
 #### Model class
 
 ![Model Class](/images/class-model.png){:class="img-fluid"}
+
+Our source code uses the [SongModel class](https://github.com/Orhan92/CosmosFunction/blob/main/SongModel.cs) to create and POST instances of our objects into our database. Then we use the same model to retrieve (GET) those instances form the database. Our Post function requires two input values: `artist` and `title` in order to add the new object into our database. We will get a BadRequest response if any of those parameters are null or empty. If we provide both values then we will add an instance of the object into our database and receive an OkObjectResult.
+In the GET function, we are using [DocumentClient](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-input?tabs=csharp#http-trigger-get-multiple-docs-using-documentclient-c) to retrieve data from the database. Our Get function requires a `searchterm` value in order to look for data inside our database. If we do not provide a value then our function will respond with a NotFound result. If we do provide a value, then our function will start looking for an `artist` that contains the `searchterm` value inside of our database. If we get a match, our function will return the object or multiple objects (if we have many different songs from the same artist) to us. It is all illustrated in the images above.
+
+This application is using a Pipeline which deploys our functions into Azure portal. This means that whenever we make any changes into our functions, our pipeline will run, and if it succeeds, our functions will be deployed to the portal (cloud) with the new changes applied. So there is no need to manually deploy our changes as our pipeline will handle that for us. See this [YAML Pipeline file](https://github.com/Orhan92/CosmosFunction/blob/main/.github/workflows/Deploy%20Azure%20Function.yml) to view the pipeline code. In order for the deployment to work, I had to add an secret that is connected to my Functions Publish Profile. This is how the pipeline knows where to deploy the functions.
