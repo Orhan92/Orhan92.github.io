@@ -28,7 +28,10 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 
 ## How does the application work?
 
-This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction)) have two different CRUD-operations: 1. [Post Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionPost.cs) and 2. [Get Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionGet.cs).
+This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction)) have two different CRUD-operations:
+
+1. [Post Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionPost.cs)
+2. [Get Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionGet.cs).
 
 #### Post Function
 
