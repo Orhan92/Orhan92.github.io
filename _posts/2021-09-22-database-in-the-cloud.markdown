@@ -66,7 +66,7 @@ This application is using a Pipeline which deploys our functions into Azure port
 
 ## Description of CosmosDb
 
-Our CosmosDb was created by following this documentation: [Create CosmosDb and bind Functions](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-add-output-binding-cosmos-db-vs-code?pivots=programming-language-csharp). The database is named `Music-database` with a container named `songs`. Data is stored inside the `songs` container as Items (documents). The Items are created with our Post function (See how the Post function works above).
+Our CosmosDb was created by following this documentation: [Create CosmosDb and bind Functions](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-add-output-binding-cosmos-db-vs-code?pivots=programming-language-csharp). The database is named `Music-database` with a container named `songs`. Data is stored inside the `songs` container as Items (documents). The Items are created with our Post function (See how the Post function works above) and retrieved with our Get function.
 To illustrate how the database looks inside Azure Portal, see the image below:
 
 ![CosmosDb in Azure Portal](/images/cosmosdb-portal.png){:class="img-fluid"}
