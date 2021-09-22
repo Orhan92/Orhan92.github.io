@@ -26,10 +26,11 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 
 ## How does the application work?
 
-This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction)) have two different CRUD-operations:
+This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction)) have two different CRUD-operations and a Model class:
 
 1. [Post Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionPost.cs)
 2. [Get Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionGet.cs)
+3. [Model class](https://github.com/Orhan92/CosmosFunction/blob/main/SongModel.cs)
 
 #### Post Function
 
@@ -38,3 +39,7 @@ This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction
 #### Get Function
 
 ![Get Function](/images/function-get.png){:class="img-fluid"}
+
+#### Model class
+
+![Model Class](/images/class-model.png){:class="img-fluid"}
