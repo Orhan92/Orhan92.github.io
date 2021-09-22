@@ -15,5 +15,5 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 - Description of the Source Code
 - Description of the CosmosDb
 - How did we deploy the Azure functions?
-- Database scheme changes (ÄNDRA DENNA)
+- Database scheme changes (**ÄNDRA DENNA**)
 - Estimated cost to run this application (1. Almost no users, 2. Alot of users)
