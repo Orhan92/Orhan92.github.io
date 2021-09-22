@@ -20,11 +20,9 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 
 #### Resources for this Project
 
-[My GitHub Repo](https://github.com/Orhan92/CosmosFunction)
-
-[Create Azure Function with VSC](https://docs.microsoft.com/sv-se/azure/azure-functions/create-first-function-vs-code-csharp)
-
-[Create CosmosDb and bind Functions](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-add-output-binding-cosmos-db-vs-code?pivots=programming-language-csharp)
+[My GitHub Repo](https://github.com/Orhan92/CosmosFunction)\
+[Create Azure Function with VSC](https://docs.microsoft.com/sv-se/azure/azure-functions/create-first-function-vs-code-csharp)\
+[Create CosmosDb and bind Functions](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-add-output-binding-cosmos-db-vs-code?pivots=programming-language-csharp)\
 
 ## How does the application work?
 
