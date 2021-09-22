@@ -81,3 +81,11 @@ Well, one option is to work with FeedChange. See [Change feed in Azure Cosmos DB
 [Image Source](https://www.sqlservercentral.com/articles/cosmosdb-change-feed-processing)
 
 ## Estimated cost to run this application
+
+#### With alot of users (estimated)
+
+![Alot of Users](/images/costalot.png){:class="img-fluid"}
+
+#### With few users (estimated)
+
+![Few Users](/images/fewusers.png){:class="img-fluid"}
