@@ -17,7 +17,6 @@ Today we are going to create Azure functions (POST and GET) and a CosmosDB. Main
 - How did we deploy the Azure functions?
 - Database scheme changes (**ÄNDRA DENNA**)
 - Estimated cost to run this application (1. Almost no users, 2. Alot of users)
-  &nbsp;
 
 #### Resources for this Project
 
@@ -31,8 +30,6 @@ This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction
 
 1. [Post Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionPost.cs)
 2. [Get Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionGet.cs)
-
-&nbsp;
 
 #### Post Function
 
