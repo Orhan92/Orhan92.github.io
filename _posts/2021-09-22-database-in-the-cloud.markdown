@@ -32,7 +32,6 @@ This application (See [My GitHub Repo](https://github.com/Orhan92/CosmosFunction
 2. [Get Function](https://github.com/Orhan92/CosmosFunction/blob/main/CosmosFunctionGet.cs).
 
 &nbsp;
-&nbsp;
 
 #### Post Function
 
