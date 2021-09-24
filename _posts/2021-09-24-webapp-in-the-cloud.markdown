@@ -163,13 +163,13 @@ You will then have to fill in information required in order to publish your appl
 
 #### With very few users
 
-With very few users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like:
+With very few users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like per month:
 
 ![Few users](/images/est-few-app.png){:class="img-fluid"}
 
 #### With many users
 
-With many users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like:
+With many users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like per month:
 
 ![Few users](/images/est-alot-app.png){:class="img-fluid"}
 
