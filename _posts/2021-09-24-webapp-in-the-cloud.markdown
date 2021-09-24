@@ -175,6 +175,6 @@ With many users, where we pay for a Cosmos Db and App Services, this is how a es
 
 #### References
 
-[ASP.NET, CosmosDb and Deployment](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/sql-api-dotnet-application#deploy-the-application-to-azure)/
-[Push Docker images to Azure](https://blog.hildenco.com/2020/10/pushing-docker-images-to-azure.html)/
+[ASP.NET, CosmosDb and Deployment](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/sql-api-dotnet-application#deploy-the-application-to-azure)\
+[Push Docker images to Azure](https://blog.hildenco.com/2020/10/pushing-docker-images-to-azure.html)\
 [Pricing Calculator](https://blog.hildenco.com/2020/10/pushing-docker-images-to-azure.html)
