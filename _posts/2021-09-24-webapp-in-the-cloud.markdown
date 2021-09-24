@@ -158,3 +158,23 @@ You will then have to fill in information required in order to publish your appl
 #### Get/Retrieve
 
 ![Get document](/images/get-cloud.png){:class="img-fluid"}
+
+## Estimated costs
+
+#### With very few users
+
+With very few users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like:
+
+![Few users](/images/est-few-app.png){:class="img-fluid"}
+
+#### With many users
+
+With many users, where we pay for a Cosmos Db and App Services, this is how a estimated cost could look like:
+
+![Few users](/images/est-alot-app.png){:class="img-fluid"}
+
+#### References
+
+[ASP.NET, CosmosDb and Deployment](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/sql-api-dotnet-application#deploy-the-application-to-azure)/
+[Push Docker images to Azure](https://blog.hildenco.com/2020/10/pushing-docker-images-to-azure.html)/
+[Pricing Calculator](https://blog.hildenco.com/2020/10/pushing-docker-images-to-azure.html)
