@@ -9,7 +9,7 @@ background: "/images/image1.jpg"
 
 # Introduction
 
-In this blog post we are going to persuade our CTO to implement to implement our work into Azure. Our company CTO doesn't want our intern data to be exposed to the public. Therefore he is a little bit sceptical to use Azure cloud solutions. My job is to convince by CTO to work with Azure and how we still can maintain our data privatea even though we are using Azure Cloud Services. I will explain how we can use a Virtual Private Cloud solution within Azure (VPC). Because our CTO is a swedish speaking person, I will have to send an email (in swedish) to him in order to persuade him to use Azure.
+In this blog post we are going to persuade our CTO to implement our work into Azure. Our company CTO doesn't want our intern data to be exposed to the public. Therefore he is a little bit sceptical to use Azure cloud solutions. My job is to convince by CTO to work with Azure and how we still can maintain our data private even though we are using Azure Cloud Services. I will explain how we can use a Virtual Private Cloud solution within Azure (VPC). Because our CTO is a swedish speaking person, I will have to send an email (in swedish) to him in order to persuade him to use Azure.
 
 ## Email to CTO
 
