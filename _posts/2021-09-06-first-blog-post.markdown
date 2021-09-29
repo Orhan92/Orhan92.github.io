@@ -123,8 +123,6 @@ As we can see, the bigger (giants) providers are far more expensive than the sma
 
 ### References
 
-[What is The Cloud?](https://www.youtube.com/watch?v=BO6jvQ88ICQ)
-
-[Comparing Cloud Services](https://www.cloudhealthtech.com/blog/cloud-comparison-guide-glossary-aws-azure-gcp)
-
+[What is The Cloud?](https://www.youtube.com/watch?v=BO6jvQ88ICQ)\
+[Comparing Cloud Services](https://www.cloudhealthtech.com/blog/cloud-comparison-guide-glossary-aws-azure-gcp)\
 [Cloud Terminology](https://medium.com/@vanshvarshney_/what-is-iaas-vs-saas-vs-paas-and-xaas-whats-the-difference-examples-ceadeee146e6)

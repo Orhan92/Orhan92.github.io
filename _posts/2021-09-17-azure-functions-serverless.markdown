@@ -202,18 +202,14 @@ I haven't really considered the security threats available here in this function
 
 ##### Prerequisities
 
-[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)
-
+[Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli)\
 [Azure Function tools](https://docs.microsoft.com/sv-se/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cportal%2Cbash%2Ckeda#v2)
 
 ##### Serverless and FaaS description
 
-[About Serverless](https://geekflare.com/know-about-serverless/)
-
-[Why Serverless?](https://hackernoon.com/why-serverless-why-now-f09ce43c4767)
-
-[Function as a Service](https://www.cloudflare.com/learning/serverless/glossary/function-as-a-service-faas/)
-
+[About Serverless](https://geekflare.com/know-about-serverless/)\
+[Why Serverless?](https://hackernoon.com/why-serverless-why-now-f09ce43c4767)\
+[Function as a Service](https://www.cloudflare.com/learning/serverless/glossary/function-as-a-service-faas/)\
 [Learn about FaaS](https://www.ibm.com/se-en/cloud/learn/faas)
 
 ##### Create a function project with CLI
@@ -222,8 +218,7 @@ I haven't really considered the security threats available here in this function
 
 ##### GitHub Deployment
 
-[Deployment with CLI](https://docs.microsoft.com/bs-cyrl-ba/azure//azure-functions/scripts/functions-cli-create-function-app-github-continuous)
-
+[Deployment with CLI](https://docs.microsoft.com/bs-cyrl-ba/azure//azure-functions/scripts/functions-cli-create-function-app-github-continuous)\
 [Generate Access Token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ##### Troubleshooting

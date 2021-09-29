@@ -104,10 +104,7 @@ I have excluded parts of the source code tests where those tests are running/che
 
 #### References
 
-[Understanding Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
-
-[Workflow Syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows)
-
-[Example Templates](https://docs.github.com/en/actions/guides/building-and-testing-net)
-
+[Understanding Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)\
+[Workflow Syntax](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#about-yaml-syntax-for-workflows)\
+[Example Templates](https://docs.github.com/en/actions/guides/building-and-testing-net)\
 [Introduktion to GitHub Actions](https://gabrieltanner.org/blog/an-introduction-to-github-actions)
