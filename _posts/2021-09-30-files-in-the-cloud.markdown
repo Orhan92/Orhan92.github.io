@@ -130,4 +130,5 @@ There are alot to say here but the main encryption and security Azure uses is to
 [Upload Image blobs](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images?tabs=dotnet%2Cazure-powershell)\
 [Connect Application with Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet)\
 [Create a Container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-container-create?tabs=dotnet)\
-[Set content type of Blob](https://stackoverflow.com/questions/10040403/set-content-type-of-media-files-stored-on-blob)
+[Set content type of Blob](https://stackoverflow.com/questions/10040403/set-content-type-of-media-files-stored-on-blob)\
+[Azure Encryption Blob Data](https://cloudacademy.com/blog/how-does-azure-encrypt-data/)
