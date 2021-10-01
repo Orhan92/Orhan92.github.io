@@ -52,6 +52,10 @@ So the steps above happens when there are no corresponding containers to the use
 
 Inside this method we are creating two new lists which contains Blob Items (containers). I will reference to the comments in the image above in order for you to understand why we created two lists. Then in the end of the method we will return the container that the user want to work with. If we cannot find any match then we will return null. If null was returned then we will print a message to the user telling them we cannot find a corresponding container with the input they gave. If a blob item was returned, then we will create and upload the image inside that particular container. This will let us upload many items/images inside the same container multiple times. But as I mentioned about the flaws when uploading a image, if the image name is the same then we will not duplicate that image, instead our code will replace the old image in the container with the new one. And the last thing we do in our Console Application is to print every item/image URL inside the container we are working with.
 
+#### How it looks like in the portal
+
+![Azure](/images/azure-storage.png){:class="img-fluid"}
+
 ### Web Application
 
 Regarding the Web Application, I do not have a git repo for it but I will illustrate and show how it works. Reson for this is that the project folder somehow had a conflict with the Main repo (The Console Application) and due to lack of time I will not focus on solving this problem. Instead I will illustrate how it works. Here is a print of what the entire solution looks like:
@@ -106,3 +110,24 @@ This project uses a Console Application in order to create blob containers and p
 - Let the user decide which container to get the images from
 
 As you can see there are alot to work with but for now we have a working Console and Web application.
+
+## Diagram of the application
+
+![Diagram](/images/diagram-blob.jpg){:class="img-fluid"}
+
+## What would it cost to have a application in the clouds that can save and read images from Blob Storage?
+
+Lets say we use Azure Storage (Blob) in order to post new images and retrieve them. Lets say we post 100 MB images each day and every image inside our container will be retrieved 3 times/day. If we use Storage Acoount with Block Blob Storage types, Premium performance, North Europe as a location, Zone-redundant storage and 1000 GB capacity on our Storage Acoount, then we will approximately have to pay around 100$/month.
+
+## How does Microsoft Secure our blob data
+
+There are alot to say here but the main encryption and security Azure uses is to work with a Azure Key Vault and Encryption Keys. All keys are stored in a vault and can then for example be invoked by URI. Microsoft have also designed their Key Vault so that noone except you can see/and extract those keys. So the best and secure way, in my opinion, is that Microsoft uses encrypted Key Vaults which can only be accessed by for example the storage owner. The owner can set permissions on which kind of access the public can have and so on. There are alot to say about how Microsoft secures our blob data, but I think this is one of the bigger solutions that Microsoft uses in order to secure data.
+
+#### References
+
+[Create a Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)\
+[Create Container and Upload Blob](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal)\
+[Upload Image blobs](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-upload-process-images?tabs=dotnet%2Cazure-powershell)\
+[Connect Application with Blob Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet)\
+[Create a Container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-container-create?tabs=dotnet)\
+[Set content type of Blob](https://stackoverflow.com/questions/10040403/set-content-type-of-media-files-stored-on-blob)
