@@ -30,4 +30,10 @@ Before I started coding I had to download the blob package: `dotnet add package 
 
 In the beginning of the code I am setting my connection string to connect to our Azure Storage Account and then I print it out in order to make sure I have the right connection string: `string connectionString = Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");` followed by `Console.WriteLine(connectionString);`. I did this by configuring my connection string with a environment variable. In order to do this I had to type this command: `setx AZURE_STORAGE_CONNECTION_STRING "<yourconnectionstring>"` in my powershell.
 
-Next step was to connect to to my `BlobServiceClient` with the help of my connection string: `BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);`. The ``BlobServiceClient` allows us to manipulate our Azure Storage service resources and blob containers. In this case it would be for our Blob containers.
+Next step was to connect to my `BlobServiceClient` with the help of my connection string: `BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);`. The ``BlobServiceClient` allows us to manipulate our Azure Storage service resources and blob containers. In this case it would be for our Blob containers. We will need this in order to work with our blobs.
+
+Next part was to create a container, which we do inside `CreateSampleContainerAsync()`-method.
+
+![Create Container](/images/create-container.png){:class="img-fluid"}
+
+This method will let the user enter a container name (has to be lower case letters).
