@@ -15,6 +15,10 @@ So, we will have to create a Storage Account (in Azure portal), after that we ar
 
 So what I have achieved so far is pretty good to be honest (I'm not bragging he he!). Of course, the application can get even better but due to lack of time I will leave it like it is. Improvement suggestions is: Create a more interesting and better UI to interact with, Make a Console Menu within the Console Application, Make the application keep running (and not exiting) until the user wants to exit (this can be configured with some sort of loop).
 
+#### Observe
+
+I will reference to `Rows` in my blog post, therefore I assume that you will have the [Program.cs](https://github.com/Orhan92/BlobConsoleApp/blob/master/Program.cs) file handy in order to follow my references. Enjoy!
+
 ## The code
 
 You can find the repository for the Console Application project here: [Blob Console App](https://github.com/Orhan92/BlobConsoleApp)
