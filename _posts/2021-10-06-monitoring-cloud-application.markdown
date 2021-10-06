@@ -27,7 +27,7 @@ I also wanted to make sure to see that our Serilog logging would work inside our
 
 ![Main.cs](/images/main-logging.png){:class="img-fluid"}
 
-This step will show our Serilog output inside the console as much as it will push the log events into our Application Insights in Azure Portal. So at this point we are almost done with implementing logging into our application. We just have to create some logs inside our application aswell.
+This step will show our Serilog output inside the console as much as it will push the log events into our Application Insights in Azure Portal. So at this point we are almost done with implementing logging into our application. We just have to create some logs inside our application aswell. **NOTICE**: If you only want to log Error, Fatals or Warnings for example. Then you have to change from `LogEventLevel.Information` to `LogEventLevel.Warning`. This will prevent our log from logging ordinary information and will instead only log warnings, errors and fatals. Basically, everything that has a negative impact on our application.
 
 ![Create Log](/images/create-logs.png){:class="img-fluid"}
 
