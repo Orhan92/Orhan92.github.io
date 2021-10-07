@@ -1,0 +1,40 @@
+---
+layout: post
+title: "Scaling"
+subtitle: "Lecture 10 - Scaling (Deadline 2021/10/08 23:55)"
+date: 2021-10-07 16:59:11 +0200
+categories: jekyll update
+background: "/images/image1.jpg"
+---
+
+# Introduction
+
+In this post we will talk about scaling in/out and scaling up/down. These are also known as scaling horizontally or vertically. We will look at pricing to scale horizontally and vertically. We will also compare scaling a Virtual Machine vs. a App Service. Lastly we will look at different Azure Service Plans and which scaling opportunities they give. I have also added a part where i test a Azure Function App with `loader.io`. Since I only picked the free plan when i signed up, I was only able to do one test which will send 250 client requests to my GET method inside my function. So lets dive into the `loader.io` tests where I will post screenshots of the test results in Azure Portal Application Insights together with Loader.io.
+
+## Loader.io
+
+So, in order to make loader.io tests work I had to follow this documentation: [Load testing Azure Functions](https://mikhail.io/2019/07/load-testing-azure-functions-with-loaderio/). Basically, what I had to do was to sign up to [loader.io](https://loader.io/). What I had to add into my source code was a `proxies.json` file inside my root folder for my Azure Functions. See [proxies.json](https://github.com/Orhan92/CosmosFunction/blob/main/proxies.json) file inside my repo. Then I had to re-publish my functions in order to add the loader.io proxy into my functions. When this was done I could easily load test my function at [loader.io](https://loader.io/). Down below I will show you screenshots of the tests (loader.io) and metrics (Azure portal).
+
+##### Test results from loader.io
+
+![loader.io](/images/test-finished.png){:class="img-fluid"}
+
+We can see that there is almost 10 000 responsed with a high amount of total bandwidth. This tells us that our function has been executed ALOT in a period of 1 minute. We can also see that there is a slow response time at one point (around 50 sec execution time). This is where, after I looked through my logs inside Azure portal, our function starts to use more instances, namely 2 instances. After that we can see that the response time lowers again.
+
+##### Function Instances
+
+![Function Instance](/images/instance-loader.png){:class="img-fluid"}
+
+It is clear that we get another instance of our function once our function gets overloaded by requests which can be seen in the loader picture above.
+
+##### Azure Function Metrics
+
+![Function metrics](/images/loader-metrics.png){:class="img-fluid"}
+
+Our metrics shows us that the function has been executed around 300.000 times. I have to admit that I ran multiple different tests inside loader.io which resulted in alot of executions of our function. But that isn't the point. The point here was to see that our function scaled and started to run on another instance as soon as the function got overloaded.
+
+This was a short example of the loader.io tests. Lets move on to the other topics that we have to discuss in this blog post.
+
+## Scaling horizontally vs vertically
+
+#### References
