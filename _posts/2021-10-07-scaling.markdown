@@ -50,9 +50,7 @@ Scaling is a process that adjust your available resources based on the demand. S
 
 Scaling Vertically means that we are taking what resources we have and replacing it with something more powerful. This could be for example a storage that can hold up to 100GB now sclaes up and can hold 1000GB. It could also, from a networking perspective mean that we are taking 1GbE switch and scaling it to a 10GbE switch. This way we have scaled from 1GbE to 10GbE which has more power. Scaling Up is good until we cannot scale up individual parts anymore. This is where scaling out comes in. As an illustration, imagine that you have a box of cereals. First draft of your cereal box was tiny and you decided that you wanted something bigger so that one box could last longer for you in your storage. So what you do? You scaled it up (vertically). You now have a bigger box of cereals which lasts longer. But now people become aware of your cereals and they want some too! Instead of charing cereals from the same box, you decide to create more boxes so that everyone can have their own box. So what did you do? You might have guessed it, you scaled out (horizontally) by creating more boxes. So Scaling Horizontally takes your resources and replicates it.
 
-## Costs to scale Veritcally vs Horizontally
-
-#### Costs to scale a App Service Horizontally vs Vertically
+## Costs to scale Veritcally vs Horizontally (VM's and App Services)
 
 #### Costs to scale a Virtual Machine (VM) Horizontally vs Vertically
 
@@ -62,11 +60,11 @@ Suppose that we have 1 initial VM with set prefixes (See images below). The aver
 
 ![1 VM](/images/one-vm.png){:class="img-fluid"}
 
-###### 5 VMs (Horizontally scaling)
+###### 5 VM Instances (Horizontally Scaling)
 
 ![5 VM](/images/five-vm.png){:class="img-fluid"}
 
-###### 1 VM (Vertically scaling)
+###### 1 VM (Vertically Scaling)
 
 Now lets have a look at that 1 VM above, and try to add some power to it (Scaling Vertically (up)) and see how it affects the price. HINT: Look at the description column and see that we have added some more power into our VM below.
 
@@ -74,6 +72,28 @@ Now lets have a look at that 1 VM above, and try to add some power to it (Scalin
 
 We can see that if we scale up our VM (image above), then we will have a monthly cost of around $610.
 A brief conclusion about scaling VM's horizontally vs vertically is that we can tell that scaling up our resources is kind of expensive. But sometimes it is actually needed. In some cases we might know exactly what kind of power we need, then it will become more cost efficient to scale your one instance up (vertically). But if we don't know what kind of power we need then it might become more useful to scale out (horizontally) with more instances of our "less" powerful VM. We can tell, just by these images above that 5 VM instances of a less powerful VM almost has the same cost as 1 more powerful VM. What to choose? Well, that depends!
+
+#### Costs to scale a App Service Horizontally vs Vertically
+
+Suppose that we have a App Service with a Standard Tier of Instance S1. Our monthly cost of that App Service would be $73. So now as we need to scale out our App Service, we decide to scale it out with 5 instances. Then our monthly cost would be 73 x 5 = $365.
+
+###### 1 App Service
+
+![1 App Service](/images/one-appservice.png){:class="img-fluid"}
+
+###### 5 App Service Instances (Horizontally Scaling)
+
+![5 App Service](/images/five-appservice.png){:class="img-fluid"}
+
+###### 1 App Service (Vertically Scaling)
+
+Lets suppose we use the same 1 App Service (from the image above). We want to Scale it up (Vertically) and see how it affects the price. This time we want to change from instance `S1` to `S3` as it will add more RAM and Cores to our App Service. HINT: Look at the description column in the image below.
+
+![1 App Service Scaled up](/images/appservice-s3.png){:class="img-fluid"}
+
+If we look at this image above (Vertically scaled App Service), then we would have a monthly cost of $292. It is still cheaper than having 5 instances of the `S1` plan. But it is not far from the same cost. What to choose between? I will reference back to the VM sector above.
+
+#### Azure Service App plans to Scale
 
 #### References
 
