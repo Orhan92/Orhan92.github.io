@@ -93,7 +93,7 @@ Lets suppose we use the same 1 App Service (from the image above). We want to Sc
 
 ![1 App Service Scaled up](/images/appservice-s3.png){:class="img-fluid"}
 
-If we look at this image above (Vertically scaled App Service), then we would have a monthly cost of $292. It is still cheaper than having 5 instances of the `S1` plan. But it is not far from the same cost. What to choose between? I will reference back to the VM sector above.
+If we look at this image above (Vertically scaled App Service), then we would have a monthly cost of $292. It is still cheaper than having 5 instances of the `S1` plan. But it is not far from the same cost. But of course, it depends on what you scale up to. If you choose another service plan then it might be even more expensive to run 1 instance of an App Service than it is to scale out one cheaper service plan into 5 instances. So it all depends. What to choose between? I will reference back to the VM sector above.
 
 #### Azure Service App plans to Scale
 
