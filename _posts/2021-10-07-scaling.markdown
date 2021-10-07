@@ -93,7 +93,7 @@ Lets suppose we use the same 1 App Service (from the image above). We want to Sc
 
 ![1 App Service Scaled up](/images/appservice-s3.png){:class="img-fluid"}
 
-If we look at this image above (Vertically scaled App Service), then we would have a monthly cost of $292. It is still cheaper than having 5 instances of the `S1` plan. But it is not far from the same cost. But of course, it depends on what you scale up to. If you choose another service plan then it might be even more expensive to run 1 instance of an App Service than it is to scale out one cheaper service plan into 5 instances. So it all depends. What to choose between? I will reference back to the VM sector above.
+If we look at this image above (Vertically scaled App Service), then we would have a monthly cost of $292. It is still cheaper than having 5 instances of the `S1` plan. But it is not far from the same cost. But of course, it depends on what you scale up to. If you choose another service plan then it might be even more expensive to run 1 instance of an App Service than it is to scale out one cheaper service plan into 5 instances. And yes, it is possible to change Service Plans for your application ([Manage App Service Plans](https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage)). What to choose between? I will reference back to the VM sector above.
 
 #### Azure Service App plans to Scale
 
@@ -107,5 +107,6 @@ So there are a different App Service Plan Tiers. Each of these Tiers come with d
 [Scaling](https://packetpushers.net/scale-up-vs-scale-out/)\
 [Service Plans and Scalability](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/2-scale-a-web-app-manually)\
 [App Service Pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/)\
-[Manage Scale-Up](https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up)
+[Manage Scale-Up](https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up)\
+[Manage App Service Plans](https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage)\
 [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
