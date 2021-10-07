@@ -95,10 +95,15 @@ If we look at this image above (Vertically scaled App Service), then we would ha
 
 #### Azure Service App plans to Scale
 
+So there are a different App Service Plan Tiers. Each of these Tiers come with different benefits. We have: _Free, Shared, Basic, Standard, Premium and Isolated_ plans which gives us different scalability access. The `Free` and `Shared` Tiers does not give us any access to Scale. The `Basic` Tier can be scaled out up to 3 instances, `Standard` Tier can scale out up to 10 instances, `Premium` Tier can scale out up to 20 instances and `Isolated` Tier can scale out up to 100 instances. When it comes to scaling up, you can do that with any Service Plan just by changing your App Service plan from `Standard` to `Premium` (example). Depending on how you scale up your Service Plans you will be provided with scaling-out opportunities where different plans gives you different amount of instances.
+
 #### References
 
 [Load testing Azure Functions with Loader.io](https://mikhail.io/2019/07/load-testing-azure-functions-with-loaderio/)\
 [What is Scaling?](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/2-autoscale-factors)\
 [Autoscaling conditions](https://docs.microsoft.com/en-us/learn/modules/scale-apps-app-service/3-app-service-autoscale-conditions-rules)\
 [Scaling](https://packetpushers.net/scale-up-vs-scale-out/)\
+[Service Plans and Scalability](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/2-scale-a-web-app-manually)\
+[App Service Pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/)\
+[Manage Scale-Up](https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up)
 [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/)
