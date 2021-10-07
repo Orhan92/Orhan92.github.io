@@ -19,7 +19,11 @@ So, in order to make loader.io tests work I had to follow this documentation: [L
 
 ![loader.io](/images/test-finished.png){:class="img-fluid"}
 
-We can see that there is almost 10 000 responsed with a high amount of total bandwidth. This tells us that our function has been executed ALOT in a period of 1 minute. We can also see that there is a slow response time at one point (around 50 sec execution time). This is where, after I looked through my logs inside Azure portal, our function starts to use more instances, namely 2 instances. After that we can see that the response time lowers again.
+We can see that there is almost 10 000 responsed with a high amount of total bandwidth. This tells us that our function has been executed ALOT in a period of 1 minute. We can also see that there is a slow response time at one point (around 50 sec execution time). This is where, after I looked through my logs inside Azure portal, our function starts to use more instances, namely 2 instances. After that we can see that the response time lowers again. We can also see that we had a few StatuCode 500's (around 80 out of 100 000 requests) during the "peak" time (where a new instance was added).
+
+![Loader errors](/images/loader-errors.png){:class="img-fluid"}
+
+This could be explained by too much amount of pressure on the function which led to a response code 500: _a generic error response. It means that the server encountered an unexpected condition that prevented it from fulfilling the request. This error is usually returned by the server when no other error code is suitable_. a short conclusion is that when our function encountered high pressure and started throwing exceptions, then another instance of the function was added and the function ran properly again right after that.
 
 ##### Function Instances
 
