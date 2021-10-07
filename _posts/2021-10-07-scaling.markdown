@@ -52,6 +52,8 @@ Scaling Vertically means that we are taking what resources we have and replacing
 
 ## Costs to scale Veritcally vs Horizontally (VM's and App Services)
 
+---
+
 #### Costs to scale a Virtual Machine (VM) Horizontally vs Vertically
 
 Suppose that we have 1 initial VM with set prefixes (See images below). The average cost for this Virtual Machine is $152.00 / month. Now we want to scale our VM Horizontally to create more instances of the same VM. So lets say that we scale the same VM out from 1 VM to 5 VM's. Then we can basically see that we pay around 152 x 5 = $760 / month. So we would have to pay around $760 / month. See images below.
