@@ -39,7 +39,7 @@ Our metrics shows us that the function has been executed around 300.000 times. I
 
 This was a short example of the loader.io tests. Lets move on to the other topics that we have to discuss in this blog post.
 
-## Scaling $ Scaling horizontally vs vertically
+## Scaling & Scaling horizontally vs vertically
 
 **What is scaling?**
 
